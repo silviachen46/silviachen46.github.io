@@ -16,15 +16,15 @@
   <meta name="author" content="Silvia Shuyu Chen">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Retrieval augmented generationNowadays a lot of people talks about GPT, Claude, and a lot of different large language models. So how do we apply them to our personal use? At the beginning it’s mainly">
+    <meta name="description" content="In Context Learning OverviewNowadays a lot of people talks about GPT, Claude, and a lot of different large language models. So how do we apply them to our personal use? At the beginning it’s mainly fi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="In Context Learning Overview">
 <meta property="og:url" content="http://silviachen46.github.io/2024/06/20/beginner/index.html">
 <meta property="og:site_name" content="Silvia Chen&#39;s Personal Website">
-<meta property="og:description" content="Retrieval augmented generationNowadays a lot of people talks about GPT, Claude, and a lot of different large language models. So how do we apply them to our personal use? At the beginning it’s mainly">
+<meta property="og:description" content="In Context Learning OverviewNowadays a lot of people talks about GPT, Claude, and a lot of different large language models. So how do we apply them to our personal use? At the beginning it’s mainly fi">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-06-20T14:29:00.000Z">
-<meta property="article:modified_time" content="2024-07-06T17:59:27.245Z">
+<meta property="article:modified_time" content="2024-07-07T02:55:15.152Z">
 <meta property="article:author" content="Silvia Shuyu Chen">
 <meta property="article:tag" content="RAG">
 <meta name="twitter:card" content="summary_large_image">
@@ -273,7 +273,7 @@
             
               <div class="markdown-body">
                 
-                <h1 id="Retrieval-augmented-generation"><a href="#Retrieval-augmented-generation" class="headerlink" title="Retrieval augmented generation"></a>Retrieval augmented generation</h1><p>Nowadays a lot of people talks about GPT, Claude, and a lot of different large language models. So how do we apply them to our personal use?</p>
+                <h1 id="In-Context-Learning-Overview"><a href="#In-Context-Learning-Overview" class="headerlink" title="In Context Learning Overview"></a>In Context Learning Overview</h1><p>Nowadays a lot of people talks about GPT, Claude, and a lot of different large language models. So how do we apply them to our personal use?</p>
 <p>At the beginning it’s mainly finetuning - which we will dive in specifically in later post. Before doing in context learning, We first pre-trained our language models on a very large text dataset. The datasets at this stage is generally clean - preprocessed text from various websites like Reddit or Wikipedia. This stage is the most expensive and time-consuming step - even with GPU acceleration it’s going to cost days of training, and these days the size of language model parameters are HUGE.</p>
 <h2 id="Finetuning"><a href="#Finetuning" class="headerlink" title="Finetuning"></a>Finetuning</h2><p>We’ll get started with finetuning. This is to further train our model with the pretrained weights on a dataset specified for your tasks, whether it is to give instructions as a customer agent, help students with their questions as a teacher, or serve as an emotional comfort. This stage is normally less pricey and takes much less time since we are “working” on the pre-trained weights, which has already been done.</p>
 <p>There are a lot of approaches of modifying the weights, whether it is to replace part of the weights or attaching a small piece of extra weights to the original model. The adaptor, is a typical example of adding newly trained weights. Another widely adopted finetuning is LoRA(Low-Rank Adaption), which we will discuss in details in later post. In short, this method just decomposes the weight matrix to the smallest dimension(or rank, as used here) possible to achieve the same training result with training the full parameters. There are mainly two benefits: First, this is very flexible. The addition nature allows people to switch between different sets of LoRA weights; Second, this is less time-consuming and saves more RAM usage due to the decomposition in dimensions.</p>
